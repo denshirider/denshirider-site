@@ -1,0 +1,337 @@
+﻿@charset "utf-8"; 
+
+
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p, th, td, img {
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
+}
+
+body {
+	line-height: 2;	
+	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro"; 
+	font-size: 75%; 
+	color: #333333; 
+}
+
+ol, ul {
+	list-style: none; 
+}
+
+a { 
+	color: #0000FF; 
+	text-decoration: none; 
+}
+
+a:hover { 
+	color: #C74B15; 
+	text-decoration: underline; 
+}
+
+.color1 {
+	color: #FF0033; 
+}
+
+
+
+#header {
+	background-image: url(../images/header.gif); 
+	background-repeat: repeat-x; 
+	height: 400px; 
+	width: auto; 
+}
+
+#header_inner {
+	position: relative; 
+	margin: 0 auto; 
+	width: 850px; 
+}
+
+#header h1 {
+	position: absolute; 
+	left: 10px; 
+	top: 10px; 
+	font-size: 1em; 
+	color: #ffffff; 
+	filter: dropshadow(color=black, offX=0, offY=-1) dropshadow(color=black, offX=1, offY=0) dropshadow(color=black, offX=0, offY=1) dropshadow(color=black, offX=-1, offY=0); 
+	text-shadow: 0px -1px black, 1px 0px black, 0px 1px black, -1px 0px black; 
+	z-index: 3; 
+}
+
+#logo {
+	position: absolute; 
+	left: 20px; 
+	top: 36px; 
+	z-index: 2; 
+}
+
+#slideshow > div {
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	right: 0px; 
+	bottom: 0px; 
+	z-index: 1; 
+}
+
+
+
+#container { 
+	width: 850px; 
+	margin: auto; 
+	background-color:#ffffff; 
+}
+
+#container a:hover img { 
+	filter: Alpha(opacity=70); 
+	opacity: 0.7; 
+}
+
+#main {
+	width: 540px; 
+	float: left; 
+}
+
+#main2 {
+	width: 680px; 
+	float: left; 
+}
+
+#content {
+	width: 400px; 
+	float: right; 
+	margin: 20px 0; 
+}
+
+#content2 {
+	width: 540px; 
+	float: right; 
+	margin: 20px 0; 
+}
+
+#leftside {
+	width: 130px; 
+	float: left; 
+	margin: 20px 0; 
+}
+
+#rightside {
+	width: 300px; 
+	float: right; 
+	margin: 20px 0; 
+}
+
+#rightside2 {
+	width: 160px; 
+	float: right; 
+	margin: 20px 0; 
+}
+
+
+
+#footer {
+	clear: both; 
+	height: 70px; 
+	width: 100%; 
+	background-image: url(../images/foot.gif); 
+	background-repeat: repeat-x; 
+}
+
+#footer_inner {
+	padding: 10px; 
+}
+
+#footer p {
+	font-size: 0.75em; 
+	color: #ffffff; 
+	text-align: center; 
+}
+
+
+
+#footmenu {
+	margin-bottom: 8px; 
+	text-align: center; 
+}
+
+#footmenu li {
+	padding-left: 15px; 
+	margin-left: 15px; 
+	border-left: solid 1px #ffffff; 
+	display: inline; 
+	list-style-type: none; 
+}
+
+#footmenu li.first {
+	border-left: none; 
+}
+
+#footmenu a { 
+	color: #ffffff; 
+	text-decoration: none; 
+}
+
+#footmenu a:hover { 
+	text-decoration: underline; 
+}
+
+
+
+.post {
+	clear: both; 
+	width: auto; 
+}
+
+.post h2 {
+	background-image: url(../images/h2.gif); 
+	background-repeat: repeat-x; 
+	line-height: 30px;	
+	margin-bottom: 10px; 
+	font-size: 1em; 
+	color: #333333; 
+}
+
+.post ul {
+	margin-bottom: 15px; 
+}
+
+.post ul li {
+	padding-left: 15px; 
+}
+
+
+
+.product {
+	overflow: hidden; 
+	padding: 5px; 
+	border: 1px solid #bfbfbf; 
+	margin-bottom: 10px; 
+	width: 527px; 
+}
+
+.product img {
+	float: left; 
+	width: 170px; 
+}
+
+.product h3 {
+	font-size: 1em; 
+	color: #055723;	
+	padding-left: 180px; 
+}
+
+.product h3 a {
+	color: #055723;	
+}
+
+.product p {
+	padding-left: 180px; 
+}
+
+
+
+.ta1 {
+	width: 540px; 
+	border-collapse: collapse; 
+	margin-bottom: 10px; 
+}
+
+.ta1 th, td {
+	border: solid 1px #696969; 
+	padding: 10px; 
+	font-size: 1em; 
+	text-align: left; 
+}
+
+.ta1 th {
+	background-color: #bb4672; 
+	color: #ffffff; 
+}
+
+
+
+.box {
+	overflow: hidden; 
+	padding: 5px; 
+	border: 1px solid #bfbfbf; 
+	margin-bottom: 10px; 
+	width: 527px; 
+}
+
+
+
+#formtable {
+	width: 540px; 
+}
+
+#formtable table {
+	width: 100%; 
+	border-collapse: collapse; 
+}
+
+#formtable th {
+	width: 100px; 
+	border: solid 1px #696969; 
+	padding: 5px; 
+	background-color: #bb4672; 
+	font-size: 1em; 
+	color: #ffffff; 
+	text-align: left; 
+}
+
+#formtable td {
+	border: solid 1px #696969; 
+	padding: 5px; 
+	font-size: 1em; 
+}
+
+#formtable input {
+	border: solid 1px #bfbec5; 
+}
+
+#formtable textarea {
+	border: solid 1px #bfbec5; 
+}
+
+#formtable p {
+	margin: 10px 0; 
+	text-align:center; 
+}
+
+
+
+#leftside img {
+	margin-bottom: 5px; 
+}
+
+
+
+#rightside h2 {
+	padding-left: 10px; 
+	margin: 20px 0; 
+	font-size: 1em; 
+	color: #333333; 
+}
+
+.newlist {
+	margin-bottom: 15px; 
+}
+
+.newlist dl {
+	width: auto; 
+	height: 200px; 
+	overflow: auto; 
+	padding-left: 5px; 
+	text-align: left; 
+}
+
+.newlist dt {
+	font-weight: bold; 
+	color: #666666; 
+}
+
+.newlist dd {
+	border-bottom: 1px solid #cccccc; 
+	margin: 5px 10px 10px 5px; 
+}

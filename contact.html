@@ -48,27 +48,37 @@
 
 <!--　ここからメインの内容　-->
 <div id="container">
-  <div id="main">
-    <div id="content">
+  <div id="main2">
+    <div id="content2">
       <noscript>
       <p>※このページはJavaScriptを使用しています。JavaScript設定を有効にしてご覧ください。</p>
       </noscript>
       
       <!--　ページの中央部分　-->
-      <div class="post"> 
-            
-        <h2>テンプレートのご利用について</h2>
-        <ul>
-          <li>このテンプレートはすべて無料でご利用いただける<a href="http://saetl.net/">Saetl.net</a>から配布しています。 </li>
-          <li><span class="color1">著作権表示は必要ありません（テンプレートにも記載はありません）</span>
-            <ul>
-              <li>無料テンプレートでよくあるページ内の著作権表示は一切必要ありませんのでご自由にお使いください。<br />
-                詳しくは<a href="http://saetl.net/about.html">利用規約</a>をご覧ください。 </li>
-            </ul>
-          </li>
-
-          <li><a href="http://saetl.net/howto.html">ご利用方法はこちら</a>からお願いします。</li>
-        </ul>
+      <div class="post">
+        <h2>お問い合わせ</h2>
+        <form method="post" action="#" id="formtable">
+          <table>
+            <tr>
+              <th>お名前</th>
+              <td><input type="text" name="お名前" size="25" /></td>
+            </tr>
+            <tr>
+              <th>メールアドレス</th>
+              <td><input type="text" name="メールアドレス" size="25" /></td>
+            </tr>
+            <tr>
+              <th>メッセージ</th>
+              <td><textarea name="メッセージ" rows="10" cols="40"></textarea></td>
+            </tr>
+          </table>
+          <p>
+            <input type="image" src="images/submit.gif" onMouseover="this.src='images/submit2.gif'" onMouseout="this.src='images/submit.gif'" value="submit">
+          </p>
+        </form>
+        <p>※上記フォームを利用するには<a href="http://www.sophia-it.com/content/CGI" target="_blank">CGI</a>などのプログラムが必要です。</p>
+        <p><a href="http://px.a8.net/svt/ejp?a8mat=1ZRABE+1LR2GI+2KAI+5YRHE" target="_blank">メールフォーム簡単作成ツール</a> <img border="0" width="1" height="1" src="http://www19.a8.net/0.gif?a8mat=1ZRABE+1LR2GI+2KAI+5YRHE" alt=""></p>
+        
         <!-- / .post --></div>
       
       <!-- / #content --></div>
@@ -76,19 +86,19 @@
     <!--　ページの左部分　-->
     <div id="leftside"> 
       
-      <!--　ページの左の内容　-->
-      <img src="images/toppage.gif" alt="トップページタイトル" width="130" height="60" />
+      <!--　ページの左の内容　--> 
+      <img src="images/contact.gif" alt="お問い合わせタイトル" width="130" height="30" /> 
       
       <!-- / #leftside --></div>
     <!-- / #main --></div>
   
   <!--　ページの右部分　-->
-  <div id="rightside">
+  <div id="rightside2">
     <div align="center"><!--ここに広告などを掲載--> 
       
       <!--ここからサンプルのflash表示なので削除してください-->
-      <object id="FlashID2" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="300" height="250">
-        <param name="movie" value="images/1.swf" />
+      <object id="FlashID2" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="160" height="600">
+        <param name="movie" value="images/2.swf" />
         <param name="quality" value="high" />
         <param name="wmode" value="opaque" />
         <param name="swfversion" value="8.0.35.0" />
@@ -96,7 +106,7 @@
         <param name="expressinstall" value="Scripts/expressInstall.swf" />
         <!-- 次のオブジェクトタグは IE 以外のブラウザーで使用するためのものです。IE では IECC を使用して非表示にします。 --> 
         <!--[if !IE]>-->
-        <object type="application/x-shockwave-flash" data="images/1.swf" width="300" height="250">
+        <object type="application/x-shockwave-flash" data="images/2.swf" width="160" height="600">
           <!--<![endif]-->
           <param name="quality" value="high" />
           <param name="wmode" value="opaque" />
@@ -114,19 +124,6 @@
       <!--ここまでflash表示--> 
       
     </div>
-    <h2>新着情報</h2>
-    <div class="newlist">
-      <dl>
-        <dt>20xx/xx/xx</dt>
-        <dd><a href="#">テキスト</a></dd>
-        <dt>20xx/xx/xx</dt>
-        <dd><a href="#">テキスト</a></dd>
-        <dt>20xx/xx/xx</dt>
-        <dd><a href="#">テキスト</a></dd>
-        <dt>20xx/xx/xx</dt>
-        <dd><a href="#">テキスト</a></dd>
-      </dl>
-      <!-- / .newlist --></div>
     
     <!-- / #rightside --></div>
   
