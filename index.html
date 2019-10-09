@@ -1,122 +1,196 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Tyoe" content="text/javascript" />
+<meta charset="utf-8" />
 <title>ここにキーワードを含むページのタイトルを記入</title>
 <meta name="Description" content="ここにキーワードを含むページの説明文を記入" />
 <meta name="Keywords" content="キーワード,キーワード,キーワード" />
+<meta name="viewport" content="width=device-width; initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 <link rel="icon" href="http://saetl.net/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" type="img/x-icon" href="http://saetl.net/favicon.ico" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="css/SlideDownBoxMenu.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/sm-core-css.css"> <!--中央上のメインメニュー-->
+<link rel="stylesheet" href="css/sm-blue.css"> <!--中央上のメインメニュー-->
+<link rel="stylesheet" href="css/lightbox.css"> <!--画像拡大-->
+<link rel="stylesheet" href="css/hovereffects.css"> <!--ホバーエフェクト-->
+<link href='http://fonts.googleapis.com/css?family=Ceviche+One|Artifika' rel='stylesheet' type='text/css'> <!--googleのwebフォント-->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
 </head>
 
 <body>
 
+<noscript>
+<p>※このページはJavaScriptを使用しています。JavaScript設定を有効にしてご覧ください。</p>
+</noscript>
+
 <!--　ヘッダー（サイト名やサイトの内容を示す部分）　-->
-<div id="header">
-  <div id="header_inner">
-    <h1>ここにキーワードを含むページの見出しを記入</h1>
-    
-    <!-- ロゴ（ページ左上のサイト名の画像）　-->
-    <div id="logo"> <a href="index.html" title="(サイト名)のトップページへ"><img src="images/logo.gif" width="220" height="40" alt="(サイト名)のトップページへ" /></a> 
-      <!-- / #logo --></div>
-    <div id="slideshow">
-      <div> <img src="images/1.jpg" alt="スライドショー画像"> </div>
-      <div> <img src="images/2.jpg" alt="スライドショー画像"> </div>
-      <div> <img src="images/3.jpg" alt="スライドショー画像"> </div>
-      <div> <img src="images/4.jpg" alt="スライドショー画像"> </div>
-      <!-- / #slideshow --></div>
-    
-    <!-- / #header_inner --></div>
-  <!-- / #header --></div>
+<header>
+  <!-- ロゴ（ページ左上のサイト名）　-->
+  <div id="logo">
+    <a href="index.html" title="サイト名のトップページへ">Sample Template</a> 
+    <!-- / #logo -->
+  </div>
+</header>
 
-<!--　ナビゲーションメニュー（ヘッダーの下のメインメニュー）ー-->
-<div class="sdt_menu">
-  <ul id="sdt_menu" class="sdt_menu">
-    <li> <a href="index.html"> <img src="images/menu/1.jpg" alt="メニュー画像"/> <span class="sdt_active"></span> <span class="sdt_wrap"> <span class="sdt_link">home</span> <span class="sdt_descr">トップページへ</span> </span> </a> </li>
-    <li> <a href="product.html"> <img src="images/menu/2.jpg" alt="メニュー画像"/> <span class="sdt_active"></span> <span class="sdt_wrap"> <span class="sdt_link">product</span> <span class="sdt_descr">製品紹介</span> </span> </a>
-      <div class="sdt_box"> <a href="#">categories1</a> <a href="#">categories2</a> <a href="#">categories3</a> </div>
-    </li>
-    <li> <a href="access.html"> <img src="images/menu/3.jpg" alt="メニュー画像"/> <span class="sdt_active"></span> <span class="sdt_wrap"> <span class="sdt_link">access</span> <span class="sdt_descr">アクセス</span> </span> </a> </li>
-    <li> <a href="company.html"> <img src="images/menu/4.jpg" alt="メニュー画像"/> <span class="sdt_active"></span> <span class="sdt_wrap"> <span class="sdt_link">company</span> <span class="sdt_descr">会社概要</span> </span> </a> </li>
-    <li> <a href="contact.html"> <img src="images/menu/5.jpg" alt="メニュー画像"/> <span class="sdt_active"></span> <span class="sdt_wrap"> <span class="sdt_link">contact</span> <span class="sdt_descr">お問い合わせ</span> </span> </a> </li>
-  </ul>
-  <!-- / .sdt_menu --></div>
 
-<!--　ここからメインの内容　-->
-<div id="container">
-  <div id="main">
-    <div id="content">
-      <noscript>
-      <p>※このページはJavaScriptを使用しています。JavaScript設定を有効にしてご覧ください。</p>
-      </noscript>
-      
+<div id="wrapper">
+  <div id="contents">
+
       <!--　ページの中央部分　-->
-      <div class="post"> 
-            
-        <h2>テンプレートのご利用について</h2>
-        <ul>
-          <li>このテンプレートはすべて無料でご利用いただける<a href="http://saetl.net/">Saetl.net</a>から配布しています。 </li>
-          <li><span class="color1">著作権表示は必要ありません（テンプレートにも記載はありません）</span>
+    <div id="column1">    
+      <div id="column1_inner">
+      
+        <!--　ナビゲーションメニュー（ヘッダーの下のメインメニュー）ー-->
+        <ul id="main-menu" class="sm sm-blue">
+          <li class="menutop"><a href="index.html">home</a> 
+          <li class="menutop"><a href="#">category1</a>
             <ul>
-              <li>無料テンプレートでよくあるページ内の著作権表示は一切必要ありませんのでご自由にお使いください。<br />
-                詳しくは<a href="http://saetl.net/about.html">利用規約</a>をご覧ください。 </li>
+              <li class="menusub"><a href="#">subcategory1</a>
+                <ul>
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a> 
+                  <li><a href="#">content</a>
+                </ul>
+              <li class="menusub"><a href="#">subcategory2</a> 
+              <li class="menusub"><a href="#">subcategory3</a>
+            </ul>
+          <li class="menutop"><a href="category.html">category2</a>
+          <li class="menutop"><a href="#">category3</a>
+            <ul>
+              <li class="menusub"><a href="#">subcategory1</a> 
+              <li class="menusub"><a href="#">subcategory2</a> 
+              <li class="menusub"><a href="#">subcategory3</a>
             </ul>
           </li>
-
-          <li><a href="http://saetl.net/howto.html">ご利用方法はこちら</a>からお願いします。</li>
+          <li class="menutop"><a href="#">category4</a>
+            <ul class="mega-menu">
+              <li class="menusub"> 
+                <div class="subtext">
+                  <p>text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text</p>
+                </div>
+              </li>
+            </ul>
+          </li>
         </ul>
-        <!-- / .post --></div>
+        
+        <div id="topcontent">
+        <!--　YouTubeプレーヤー　ー-->
+          <div id="player">
+          </div>
+        </div>
+                
+        <article>
+          <h2>レスポンシブデザインとは</h2>
+          <ul>
+            <li>パソコンからスマートフォンまで様々な画面サイズに対応させるデザインのことです。
+          </ul>
+          <h2>このテンプレートで使用している画像について</h2>
+          <ul>
+            <li>index.htmlのYouTubeの動画と画面下側のギャラリー画像は<a href="http://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9" target="_blank">API</a>を使用しています。
+            <li>APIのファイルはapp.jsです。詳細は<a href="category.html">こちら</a>
+          </ul>
+          <h2>テンプレートのご利用について</h2>
+          <ul>
+            <li> このテンプレートはすべて無料でご利用いただける <a href="http://saetl.net/"> Saetl.net </a> から配布しています。 
+            <li class="color1">著作権表示は必要ありません（テンプレートにも記載はありません） 
+            <li> 無料テンプレートでよくあるページ内の著作権表示は一切必要ありませんのでご自由にお使いください。 
+            <li> 詳しくは <a href="http://saetl.net/about.html"> 利用規約 </a> をご覧ください。 
+             
+            <li> <a href="http://saetl.net/howto.html"> ご利用方法はこちら </a> からお願いします。
+          </ul>
+        </article>
+        
+        <!-- / #column1_inner -->
+      </div>
       
-      <!-- / #content --></div>
+      <!--column1-->
+    </div>
     
     <!--　ページの左部分　-->
-    <div id="leftside"> 
+    <div id="sidebar">
+    
+      <!-- ロゴ（ページ左上のサイト名）　-->
+      <h1 id="logo_2">
+        <a href="index.html" title="サイト名のトップページへ">Sample<br>
+        Template</a> 
+        <!-- / #logo -->
+      </h1>
       
-      <!--　ページの左の内容　-->
-      <img src="images/toppage.gif" alt="トップページタイトル" width="130" height="60" />
+    <!--　ページの左のサブメニュー　-->
+      <ul>
+        <li><a href="#">Submenu1</a>
+        <li><a href="#">Submenu2</a> 
+        <li><a href="#">Submenu3</a> 
+        <li><a href="#">Submenu4</a> 
+        <li><a href="#">Submenu5</a>
+      </ul>
       
-      <!-- / #leftside --></div>
-    <!-- / #main --></div>
+      <!-- / #sidebar -->
+    </div>
+    
+    <!-- / #contents -->
+  </div>
   
   <!--　ページの右部分　-->
-  <div id="rightside">
-    <div align="center"><!--ここに広告などを掲載--> 
-      
-      <!--ここからサンプルのflash表示なので削除してください-->
-      <object id="FlashID2" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="300" height="250">
-        <param name="movie" value="images/1.swf" />
-        <param name="quality" value="high" />
-        <param name="wmode" value="opaque" />
-        <param name="swfversion" value="8.0.35.0" />
-        <!-- このパラメータータグにより、Flash Player 6.0 または 6.5 以降を使用して、Flash Player の最新バージョンをダウンロードするようメッセージが表示されます。ユーザーにメッセージを表示させないようにする場合はパラメータータグを削除します。 -->
-        <param name="expressinstall" value="Scripts/expressInstall.swf" />
-        <!-- 次のオブジェクトタグは IE 以外のブラウザーで使用するためのものです。IE では IECC を使用して非表示にします。 --> 
-        <!--[if !IE]>-->
-        <object type="application/x-shockwave-flash" data="images/1.swf" width="300" height="250">
-          <!--<![endif]-->
-          <param name="quality" value="high" />
-          <param name="wmode" value="opaque" />
-          <param name="swfversion" value="8.0.35.0" />
-          <param name="expressinstall" value="Scripts/expressInstall.swf" />
-          <!-- ブラウザーには、Flash Player 6.0 以前のバージョンを使用して次の代替コンテンツが表示されます。 -->
-          <div>
-            <h4>このページのコンテンツには、Adobe Flash Player の最新バージョンが必要です。</h4>
-            <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Adobe Flash Player を取得" width="112" height="33" /></a></p>
-          </div>
-          <!--[if !IE]>-->
-        </object>
-        <!--<![endif]-->
-      </object>
-      <!--ここまでflash表示--> 
-      
+  <div id="column2">
+  
+    <div id="afir">
+      <!--　ここにgoogleの広告などを掲載　--> 
+      <!-- 300x250 --> 
+      <!-- / #afir -->
     </div>
+    <div id="afir2">
+      <!--　ここにgoogleの広告などを掲載　--> 
+	　<!-- 200x200 -->
+      <!-- / #afir2 -->
+    </div>
+    
+  <!--　ページの右の新着情報　-->
     <h2>新着情報</h2>
-    <div class="newlist">
-      <dl>
+    <div id="scroll">
+      <dl id="newlist">
+        <dt>20xx/xx/xx</dt>
+        <dd><a href="#">テキスト</a></dd>
+        <dt>20xx/xx/xx</dt>
+        <dd><a href="#">テキスト</a></dd>
+        <dt>20xx/xx/xx</dt>
+        <dd><a href="#">テキスト</a></dd>
+        <dt>20xx/xx/xx</dt>
+        <dd><a href="#">テキスト</a></dd>
+        <dt>20xx/xx/xx</dt>
+        <dd><a href="#">テキスト</a></dd>
+        <dt>20xx/xx/xx</dt>
+        <dd><a href="#">テキスト</a></dd>
+        <dt>20xx/xx/xx</dt>
+        <dd><a href="#">テキスト</a></dd>
         <dt>20xx/xx/xx</dt>
         <dd><a href="#">テキスト</a></dd>
         <dt>20xx/xx/xx</dt>
@@ -126,43 +200,46 @@
         <dt>20xx/xx/xx</dt>
         <dd><a href="#">テキスト</a></dd>
       </dl>
-      <!-- / .newlist --></div>
+      <!-- / .newlist -->
+    </div>
     
-    <!-- / #rightside --></div>
+    <!-- / #column2 -->
+  </div>
   
-  <!-- / #container --></div>
-
+  <!--　ギャラリー　-->
+  <section>
+    <div id="photo">
+    </div>
+    <div id="next" class="more">
+      more
+    </div>
+  </section>
+  
 <!--　ページの下部分　-->
-<div id="footer">
-  <div id="footer_inner">
-    <div id="footmenu">
-      <ul>
-        <li class="first"><a href="index.html">サイト名</a></li>
-        <li><a href="sitemap.html">サイトマップ</a></li>
-      </ul>
-      <!-- / #footmenu --></div>
-    <p>Copyright(C) 2012 サイト名 All Rights Reserved. </p>
-    <!-- / #footer_inner --></div>
-  <!-- / #footer --></div>
+  <footer>
+    <p class="cop">Copyright(C) 2014 サイト名 All Rights Reserved.</p>
+  </footer>
+  
+  <!-- / #wrapper -->
+</div>
 
 <!--　javascript設定　--> 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> <!--googleのCDN（ネットワーク経由でコンテンツを提供するサービス）よりjqueryをロード--> 
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script> <!--エフェクト(効果,影響,結果)動作--> 
-<script><!--スライドショー-->
-		$(function() {
-			$("#slideshow > div:gt(0)").hide();
-			setInterval(function() { 
-			  $('#slideshow > div:first')
-			    .fadeOut(2000)
-			    .next()
-			    .fadeIn(2000)
-			    .end()
-			    .appendTo('#slideshow');
-			},  5000);
-		});
-	</script> 
-<script type="text/javascript" src="js/SlideDownBoxMenu.js"></script> <!--スライドダウンメニュー--> 
-<script type="text/javascript" src="js/scrolltopcontrol.js"></script> <!--スクロールしながらページのトップに戻る-->
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  <!--googleのCDN（ネットワーク経由でコンテンツを提供するサービス）よりjqueryをロード-->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> <!--エフェクト効果-->
+<script src="js/jquery.smartmenus.js"></script> <!--メインメニュー-->
+<script>
+	$(function() {
+		$('#main-menu').smartmenus();
+	});
+</script> 
+<script src="js/app.js"></script> <!--youtube api、flickr api　設定-->
+<script src="js/jquery.vgrid.min.js"></script> <!--ボックスを敷き詰める-->
+<script src="js/jquery.slimscroll.js"></script> <!--新着情報のスクロール-->
+<script>
+	$('#scroll').slimScroll({
+});
+</script> 
+<script src="js/lightbox-2.6.min.js"></script> <!--画像拡大-->
+<script src="js/scrolltopcontrol.js"></script>  <!--スクロールしながらページのトップに戻る-->
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿@charset "utf-8"; /*文字コード指定*/
+@charset "utf-8"; /*文字コード指定*/
 
 /* ----- css reset(各ブラウザで指定されているスタイルを初期化)と全体設定 ----- */
 
@@ -9,329 +9,605 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea
 }
 
 body {
-	line-height: 2;	/*行の高さ指定(数値のみの場合はfont-sizeの倍数)*/
-	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro"; /*フォントの種類指定(左から優先順位)*/
+	color: #333; /*文字色指定*/
 	font-size: 75%; /* フォントサイズ指定(%はブラウザに設定した標準文字サイズ(通常16px)に対する値)*/
-	color: #333333; /*文字色指定*/
+	font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro"; /*フォントの種類指定(左から優先順位)*/
+	line-height: 1;	/*行の高さ指定(数値のみの場合はfont-sizeの倍数)*/
 }
 
 ol, ul {
 	list-style: none; /*リストマーカーの種類指定(noneはなし)*/
 }
 
-a { /*リンクの文字設定(マウスをのせる前)*/
-	color: #0000FF; /*文字色指定*/
+a {
+	color: #333; /*文字色指定*/
 	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
 }
 
-a:hover { /*リンクの文字設定(マウスをのせた時)*/
-	color: #C74B15; /*文字色指定*/
-	text-decoration: underline; /*テキストの装飾指定(下線、上線など)(underlineは下線を引く)*/
+a:hover {
+	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
 }
 
 .color1 {
-	color: #FF0033; /*文字色指定*/
-}
-
-/* ----- ヘッダー(ページの一番上の部分) ----- */
-
-#header {
-	background-image: url(../images/header.gif); /*背景画像指定　url(画像ファイルを指定)*/
-	background-repeat: repeat-x; /*背景画像の並べかた(repeat-xは横方向に繰り返し並べる)*/
-	height: 400px; /*領域の高さ指定*/
-	width: auto; /*幅指定(autoは初期値に戻す)*/
-}
-
-#header_inner {
-	position: relative; /*ボックスの配置方法(relativeは相対位置配置)*/
-	margin: 0 auto; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
-	width: 850px; /*幅指定*/
-}
-
-#header h1 {
-	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
-	left: 10px; /*左からの距離(positionで指定している場合に適用)*/
-	top: 10px; /*上からの距離(positionで指定している場合に適用)*/
-	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
-	color: #ffffff; /*文字色指定*/
-	filter: dropshadow(color=black, offX=0, offY=-1) dropshadow(color=black, offX=1, offY=0) dropshadow(color=black, offX=0, offY=1) dropshadow(color=black, offX=-1, offY=0); /*テキスト縁取り(ie)*/
-	text-shadow: 0px -1px black, 1px 0px black, 0px 1px black, -1px 0px black; /*テキスト縁取り*/
-	z-index: 3; /*ボックスの重なりの順序を指定*/
-}
-
-#logo {
-	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
-	left: 20px; /*左からの距離(positionで指定している場合に適用)*/
-	top: 36px; /*上からの距離(positionで指定している場合に適用)*/
-	z-index: 2; /*ボックスの重なりの順序を指定*/
-}
-
-#slideshow > div {
-	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
-	top: 0px; /*上からの距離(positionで指定している場合に適用)*/
-	left: 0px; /*左からの距離(positionで指定している場合に適用)*/
-	right: 0px; /*右からの距離(positionで指定している場合に適用)*/
-	bottom: 0px; /*下からの距離(positionで指定している場合に適用)*/
-	z-index: 1; /*ボックスの重なりの順序を指定*/
-}
-
-/* ----- レイアウト ----- */
-
-#container { /*container(入れ物、容器)の中に各要素(ボックス)を配置*/
-	width: 850px; /*幅指定*/
-	margin: auto; /*ボックス外側の余白(autoはボックス幅や隣接する他ボックス幅による自動余白割り当て)*/
-	background-color:#ffffff; /*背景色指定*/
-}
-
-#container a:hover img { /*画像にマウスをのせた時半透明にする*/
-	filter: Alpha(opacity=70); /*視覚効果(IE独自) Alphaは透過表示 opacityは開始透明度*/
-	opacity: 0.7; /*要素の透明度*/
-}
-
-#main {
-	width: 540px; /*幅指定*/
-	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
-}
-
-#main2 {
-	width: 680px; /*幅指定*/
-	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
-}
-
-#content {
-	width: 400px; /*幅指定*/
-	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
-	margin: 20px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
-}
-
-#content2 {
-	width: 540px; /*幅指定*/
-	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
-	margin: 20px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
-}
-
-#leftside {
-	width: 130px; /*幅指定*/
-	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
-	margin: 20px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
-}
-
-#rightside {
-	width: 300px; /*幅指定*/
-	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
-	margin: 20px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
-}
-
-#rightside2 {
-	width: 160px; /*幅指定*/
-	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
-	margin: 20px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
-}
-
-/* ----- フッター(ページの一番下の部分) ----- */
-
-#footer {
-	clear: both; /*floatの回り込みを解除*/
-	height: 70px; /*領域の高さを指定*/
-	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
-	background-image: url(../images/foot.gif); /*背景画像指定　url(画像ファイルを指定)*/
-	background-repeat: repeat-x; /*背景画像の並べかた(repeat-xは横方向に繰り返し並べる)*/
-}
-
-#footer_inner {
-	padding: 10px; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
-}
-
-#footer p {
-	font-size: 0.75em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
-	color: #ffffff; /*文字色指定*/
-	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
-}
-
-/* ----- フッターメニュー ----- */
-
-#footmenu {
-	margin-bottom: 8px; /*ボックス外側下の余白*/
-	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
-}
-
-#footmenu li {
-	padding-left: 15px; /*ボックス内側左の余白*/
-	margin-left: 15px; /*ボックス外側左の余白*/
-	border-left: solid 1px #ffffff; /*左境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-	display: inline; /*要素の表示形式指定(inlineはインラインレベルで表示(リストを横並び))*/
-	list-style-type: none; /*リストマーカーの種類指定(noneはなし)*/
-}
-
-#footmenu li.first {
-	border-left: none; /*左境界線の一括指定(noneはなし)*/
-}
-
-#footmenu a { /*リンクの文字設定(マウスをのせる前)*/
-	color: #ffffff; /*文字色指定*/
-	text-decoration: none; /*テキストの装飾指定(下線、上線など)(noneはなし)*/
-}
-
-#footmenu a:hover { /*リンクの文字設定(マウスをのせた時)*/
-	text-decoration: underline; /*テキストの装飾指定(下線、上線など)(underlineは下線を引く)*/
-}
-
-/* ----- コンテンツ ----- */
-
-.post {
-	clear: both; /*floatの回り込みを解除*/
-	width: auto; /*幅指定(autoは初期値に戻す)*/
-}
-
-.post h2 {
-	background-image: url(../images/h2.gif); /*背景画像指定　url(画像ファイルを指定)*/
-	background-repeat: repeat-x; /*背景画像の並べかた(repeat-xは横方向に繰り返し並べる)*/
-	line-height: 30px;	/*行の高さ指定*/
-	margin-bottom: 10px; /*ボックス外側下の余白*/
-	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
-	color: #333333; /*文字色指定*/
-}
-
-.post ul {
-	margin-bottom: 15px; /*ボックス外側下の余白*/
-}
-
-.post ul li {
-	padding-left: 15px; /*ボックス内側左の余白*/
-}
-
-/* ---- 画像リストの設定 ----- */
-
-.product {
-	overflow: hidden; /*領域に入りきらない内容の処理(hiddenははみ出す場合表示されず)*/
-	padding: 5px; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
-	border: 1px solid #bfbfbf; /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-	margin-bottom: 10px; /*ボックス外側下の余白*/
-	width: 527px; /*幅指定*/
-}
-
-.product img {
-	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
-	width: 170px; /*幅指定*/
-}
-
-.product h3 {
-	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
-	color: #055723;	/*文字色*/
-	padding-left: 180px; /*ボックス内側左の余白*/
-}
-
-.product h3 a {
-	color: #055723;	/*文字色指定*/
-}
-
-.product p {
-	padding-left: 180px; /*ボックス内側左の余白*/
-}
-
-/* ---- テーブルの設定 ----- */
-
-.ta1 {
-	width: 540px; /*幅指定*/
-	border-collapse: collapse; /*境界線の表示指定(collapseは重ねて表示)*/
-	margin-bottom: 10px; /*ボックス外側下の余白*/
-}
-
-.ta1 th, td {
-	border: solid 1px #696969; /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-	padding: 10px; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
-	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
-	text-align: left; /*行の水平方向の揃え方(leftは左寄せ)*/
-}
-
-.ta1 th {
-	background-color: #bb4672; /*背景色指定*/
-	color: #ffffff; /*文字色指定*/
-}
-
-/* ---- ボックスの設定 ----- */
-
-.box {
-	overflow: hidden; /*領域に入りきらない内容の処理(hiddenははみ出す場合表示されず)*/
-	padding: 5px; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
-	border: 1px solid #bfbfbf; /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-	margin-bottom: 10px; /*ボックス外側下の余白*/
-	width: 527px; /*幅指定*/
-}
-
-/* ---- 入力フォームの設定 ----- */
-
-#formtable {
-	width: 540px; /*幅指定*/
-}
-
-#formtable table {
-	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
-	border-collapse: collapse; /*境界線の表示指定(collapseは重ねて表示)*/
-}
-
-#formtable th {
-	width: 100px; /*幅指定*/
-	border: solid 1px #696969; /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-	padding: 5px; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
-	background-color: #bb4672; /*背景色指定*/
-	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
-	color: #ffffff; /*文字色指定*/
-	text-align: left; /*行の水平方向の揃え方(leftは左寄せ)*/
-}
-
-#formtable td {
-	border: solid 1px #696969; /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-	padding: 5px; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
-	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
-}
-
-#formtable input {
-	border: solid 1px #bfbec5; /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-}
-
-#formtable textarea {
-	border: solid 1px #bfbec5; /*境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-}
-
-#formtable p {
-	margin: 10px 0; /*ボックス外側の余白(値1つは上下左右をまとめて指定)*/
-	text-align:center; /*行の水平方向の揃え方(centerは中央揃え)*/
+	color: #990000; /*文字色指定*/
 }
 
 /* ----- ページ左の内容 ----- */
 
-#leftside img {
-	margin-bottom: 5px; /*ボックス外側下の余白*/
+#logo_2 {
+	margin: 15px; /*ボックス外側の余白*/
+}
+
+#logo_2 a {
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	font-size: 1.2em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	font-family: 'Ceviche One', cursive; /*フォントの種類指定(googleのwebフォント)*/
+}
+
+#logo_2 a:hover {
+	color:#999; /*文字色指定*/
+	/*アニメーション（ふわっと変化）設定*/
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;/*ここまでアニメーション設定*/
+}
+
+#sidebar ul {
+	margin: 50px 10px 20px 20px; /*ボックス外側の余白(値4つは左から上,右,下,左の値)*/
+	width: 130px; /*幅指定*/
+	font-weight: bold; /*フォントの太さ指定(boldは太字)*/
+	font-size: 1.2em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+}
+
+#sidebar li {
+	border-bottom: 1px solid #bbb; /*境界線設定*/
+	line-height: 50px; /*行の高さ指定*/
+}
+
+#sidebar li a {
+	color: #999; /*文字色指定*/
+}
+
+#sidebar li a:hover {
+	color:#333; /*文字色指定*/
+	/*アニメーション（ふわっと変化）設定*/
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;/*ここまでアニメーション設定*/
+}
+
+/* ----- ページ中央の内容 ----- */
+
+/*youtube playerのレスポンシブ設定*/
+#topcontent {
+	position: relative; /*ボックスの配置方法(relativeは相対位置配置)*/
+	overflow: hidden; /*ボックスからはみ出た部分の設定（hiddenは非表示）*/
+	padding-top: 30px; /*ボックス内側上の余白*/
+	padding-bottom: 56.25%; /*ボックス内側下の余白*/
+	height: 0; /*領域の高さ指定*/
+}
+
+#topcontent iframe {
+	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
+	top: 0; /*上からの距離(positionで指定している場合に適用)*/
+	left: 0; /*左からの距離(positionで指定している場合に適用)*/
+	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
+	height: 100%; /*領域の高さ指定(100%は縦いっぱいに表示)*/
+}
+
+/*ここまでyoutube playerのレスポンシブ設定*/
+
+article h2 {
+	margin: 20px 10px 15px 10px; /*ボックス外側の余白(値4つは左から上,右,下,左の値)*/
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	font-size: 1.2em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+}
+
+article ul {
+	margin-left: 20px; /*ボックス外側左の余白*/
+	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	line-height: 25px; /*行の高さ指定*/
+}
+
+article a {
+	text-decoration: underline; /*テキストの装飾指定(下線、上線など)(underlineは下線を引く)*/
+}
+
+/*ギャラリー設定*/
+section {
+	clear: both; /*floatの回り込みを解除*/
+	margin: 10px; /*ボックス外側の余白(値4つは左から上,右,下,左の値)*/
+	padding-top: 20px; /*ボックス内側上の余白*/
+}
+
+#photo {
+	margin-right: -10px; /*ボックス外側右の余白*/
+}
+
+.grid {
+	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
+	background-color: #fff; /*背景色指定*/
+	/*ボックスの影設定*/
+	-webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	/*ここまでボックスの影設定*/
+	/*ボックスの時間変化の設定*/
+	-webkit-transition: top 1s ease, left 1s ease;
+	-moz-transition: top 1s ease, left 1s ease;
+	-ms-transition: top 1s ease, left 1s ease;
+	-o-transition: top 1s ease, left 1s ease;/*ここまでボックスの時間変化の設定*/
+}
+
+.grid img {
+	padding: 5px 0 3px 2.5%; /*ボックス内側の余白(値4つは左から上,右,下,左の値)*/
+	width: 95%; /*幅指定*/
+}
+
+.grid:hover {
+	color:#a22041; /*文字色指定*/
+}
+
+.grid p {
+	padding: 5px 0; /*ボックス内側の余白(値2つは左から上下、左右の値)*/
+	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
+	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+}
+
+.more {
+	margin: 20px auto; /*ボックス外側の余白(値2つは左から上下、左右の値)*/
+	padding-bottom: 5px; /*ボックス内側下の余白*/
+	width: 200px; /*幅指定*/
+	height: 30px; /*領域の高さ指定*/
+	/*ボックスの設定*/
+	border-radius: 15px;
+	background: #bfbfbf; /* Old browsers */
+	background: -moz-linear-gradient(top,  #bfbfbf 0%, #939393 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bfbfbf), color-stop(100%,#939393)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #bfbfbf 0%,#939393 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #bfbfbf 0%,#939393 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #bfbfbf 0%,#939393 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #bfbfbf 0%,#939393 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfbfbf', endColorstr='#939393',GradientType=0 ); /* IE6-9 */
+	/*ここまでボックスの設定*/
+	color: #fff; /*文字色指定*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+	font-size: 1.5em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	font-family: 'Artifika', cursive; /*フォントの種類指定(googleのwebフォント)*/
+	line-height: 30px; /*行の高さ指定*/
+	/*透明度設定*/
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+	-moz-opacity: 0.8;/*ここまで透明度設定*/
+}
+
+.more:hover {
+	color: #000; /*文字色指定*/
+	/*透明度設定*/
+	opacity: 0.6;
+	filter:alpha(opacity=60);
+	-moz-opacity: 0.6;
+	/*ここまで透明度設定*/
+	cursor: pointer; /*マウスカーソルの形状を指定(pointerはリンクカーソル)*/
+	/*アニメーション（ふわっと変化）設定*/
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;/*ここまでアニメーション設定*/
 }
 
 /* ----- ページ右の内容 ----- */
 
-#rightside h2 {
-	padding-left: 10px; /*ボックス内側左の余白*/
-	margin: 20px 0; /*ボックス外側の余白(値2つは左から上下,左右の値)*/
+#column2 h2 {
+	margin: 30px 10px 5px 5px; /*ボックス外側の余白(値4つは左から上,右,下,左の値)*/
+	color: #333; /*文字色指定*/
 	font-size: 1em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
-	color: #333333; /*文字色指定*/
 }
 
-.newlist {
-	margin-bottom: 15px; /*ボックス外側下の余白*/
-}
-
-.newlist dl {
-	width: auto; /*幅指定(autoは初期値に戻す)*/
+#scroll {
+	margin: 5px 0 5px 10px; /*ボックス外側の余白(値4つは左から上,右,下,左の値)*/
+	width: 290px; /*幅指定*/
 	height: 200px; /*領域の高さ指定*/
-	overflow: auto; /*領域に入りきらない内容の処理(autoはブラウザに依存(通常はみ出す場合はスクロール表示))*/
+}
+
+#newlist dl {
 	padding-left: 5px; /*ボックス内側左の余白*/
 	text-align: left; /*行の水平方向の揃え方(leftは左寄せ)*/
 }
 
-.newlist dt {
+#newlist dt {
+	padding: 5px 10px 5px 0; /*ボックス内側の余白(値4つは左から上,右,下,左の値)*/
+	color: #666; /*文字色指定*/
 	font-weight: bold; /*フォントの太さ指定(boldは太字)*/
-	color: #666666; /*文字色指定*/
 }
 
-.newlist dd {
-	border-bottom: 1px solid #cccccc; /*下境界線の一括指定(solidは1本線,線の太さ,線の色)*/
-	margin: 5px 10px 10px 5px; /*ボックス外側の余白(値4つは左から上,右,下,左の値)*/
+#newlist dd {
+	padding: 5px 10px 5px 5px; /*ボックス内側の余白(値4つは左から上,右,下,左の値)*/
+	border-bottom: 1px solid #ccc; /*下境界線の一括指定(solidは1本線,線の太さ,線の色)*/
+}
+
+/* ----- ページトップに戻るボックスの設定 ----- */
+
+.pagetop {
+	margin: 20px; /*ボックス外側の余白*/
+	padding-bottom: 15px; /*ボックス内側下の余白*/
+	width: 120px; /*幅指定*/
+	height: 40px; /*領域の高さ指定*/
+	/*ボックスの設定*/
+	border-radius: 15px;
+	background: #3f4c6b; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3f4c6b 0%, #3f4c6b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f4c6b), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #3f4c6b 0%,#3f4c6b 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #3f4c6b 0%,#3f4c6b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f4c6b', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+	/*ここまでボックスの設定*/
+	color: #fff; /*文字色指定*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	font-size: 1.5em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	font-family: 'Artifika', serif;
+	line-height: 50px; /*行の高さ指定*/
+	/*透明度設定*/	opacity: 0.8;
+	filter:alpha(opacity=80);
+	-moz-opacity: 0.8;/*ここまで透明度設定*/
+}
+
+.pagetop:hover {
+	color: #000; /*文字色指定*/
+	/*透明度設定*/
+	opacity: 0.6;
+	filter:alpha(opacity=60);
+	-moz-opacity: 0.6;
+	/*ここまで透明度設定*/
+	/*アニメーション（ふわっと変化）設定*/
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+ -o-transition: 0.s;
+	transition: 0.5s;/*ここまでアニメーション設定*/
+}
+
+/* ----- フッター（ページの一番下の部分） ----- */
+
+footer {
+	clear: both; /*floatの回り込みを解除*/
+	width: 100%; /*幅指定(100%は画面横幅いっぱいに表示)*/
+	height: 30px; /*領域の高さ指定*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+	font-size: 0.8em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	line-height: 30px; /*行の高さ指定*/
+}
+
+/*レスポンシブレイアウト設定*/
+
+@media screen and (max-width: 480px) {
+
+/*レイアウト*/	
+#wrapper {
+	position: relative; /*ボックスの配置方法(relativeは相対位置配置)*/
+	width: 100%; /*幅指定*/
+}
+
+#logo {
+	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
+	top: 0; /*上からの距離(positionで指定している場合に適用)*/
+	left: 20px; /*左からの距離(positionで指定している場合に適用)*/
+}
+
+#logo a {
+	color:#333; /*文字色指定*/
+	font-weight: normal; /*フォントの太さ指定(normalは標準)*/
+	font-size: 1.2em; /*フォントサイズ指定(emはフォントの高さを１とした相対指定)*/
+	font-family: 'Ceviche One', cursive; /*フォントの種類指定(googleのwebフォント)*/
+}
+
+#logo a:hover {
+	color:#ccc; /*文字色指定*/
+	/*アニメーション（ふわっと変化）設定*/
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-ms-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;/*ここまでアニメーション設定*/
+}
+
+#logo_2 {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+
+#column1 {
+	margin: 0px auto 10px; /*ボックス外側の余白(autoはボックス幅や隣接する他ボックス幅による自動余白割り当て)*/
+	width: 100%; /*幅指定*/
+}
+
+#topcontent {
+	margin-top: 30px; /*ボックス外側上の余白*/
+}
+
+article {
+	margin-right: 20px; /*ボックス外側右の余白*/
+}
+
+article h2 {
+	margin: 20px; /*ボックス外側の余白*/
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+}
+
+#sidebar ul {
+	margin: 20px 0; /*ボックス外側の余白(値4つは左から上,右,下,左の値)*/
+	width: 100%; /*幅指定*/
+}
+
+#sidebar li {
+	line-height: 30px; /*行の高さ指定*/
+	margin: 0 20px; /*ボックス外側右の余白*/
+}
+
+#column2 {
+	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
+	top: -230px; /*上からの距離(positionで指定している場合に適用)*/
+	width: 100%; /*幅指定*/
+}
+
+#column2 h2 {
+	text-align: center; /*行の水平方向の揃え方(centerは中央揃え)*/
+}
+
+#scroll {
+	height: 150px; /*領域の高さ指定*/
+	width: 100%; /*幅指定*/
+	margin-right: 20px; /*ボックス外側右の余白*/
+}
+
+#newlist dd {
+	margin-right: 20px; /*ボックス外側右の余白*/
+}
+
+#afir {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+
+#afir2 {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+
+section {
+	margin-top: 20px; /*ボックス外側上の余白*/
+}
+
+#photo {
+	margin: 0; /*ボックス外側の余白*/
+}
+#photo a {
+	margin: 1%; /*ボックス外側の余白*/
+	width: 98%; /*幅指定*/
+}
+#photo_2 a {
+	margin: 1%; /*ボックス外側の余白*/
+	width: 98%; /*幅指定*/
+}
+}
+ @media screen and (min-width: 481px) and (max-width: 768px) {
+
+/*レイアウト*/	
+#wrapper {
+	position: relative; /*ボックスの配置方法(relativeは相対位置配置)*/
+	margin: auto; /*ボックス外側の余白(autoはボックス幅や隣接する他ボックス幅による自動余白割り当て)*/
+	width: 100%; /*幅指定*/
+}
+
+#logo {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+
+#column1 {
+	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
+	margin-right: 10px; /*ボックス外側右の余白*/
+	margin-left: -220px; /*ボックス外側右の余白*/
+	width: 100%; /*幅指定*/
+}
+
+#column1_inner {
+	margin-left: 230px; /*ボックス外側左の余白*/
+}
+
+#sidebar {
+	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
+	margin-left: 10px; /*ボックス外側左の余白*/
+	width: 200px; /*幅指定*/
+}
+
+#sidebar ul {
+	margin-top: 450px; /*ボックス外側上の余白*/
+}
+
+#sidebar li {
+	line-height: 30px; /*行の高さ指定*/
+}
+
+#column2 {
+	position: absolute; /*ボックスの配置方法(absoluteは絶対位置配置)*/
+	top: 20px; /*上からの距離(positionで指定している場合に適用)*/
+	left: 10px; /*左からの距離(positionで指定している場合に適用)*/
+	width: 200px; /*幅指定*/
+}
+
+#column2 h2 {
+	margin-left: 10px; /*ボックス外側左の余白*/
+}
+
+#scroll {
+	margin-left: 10px; /*ボックス外側左の余白*/
+	width: 180px; /*幅指定*/
+	height: 150px; /*領域の高さ指定*/
+}
+
+#afir {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+#afir2 {
+	/*グラデーション設定*/
+	background: #f3e2c7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3e2c7), color-stop(50%,#c19e67), color-stop(51%,#b68d4c), color-stop(100%,#e9d4b3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
+	/*ここまでグラデーション設定*/
+	margin-top: 68px; /*ボックス外側上の余白*/
+	width: 200px; /*幅指定*/
+	height: 200px; /*領域の高さ指定*/
+}
+
+#photo a {
+	margin: 1%; /*ボックス外側の余白*/
+	width: 31.33%; /*幅指定*/
+}
+#photo_2 a {
+	margin: 1%; /*ボックス外側の余白*/
+	width: 31.33%; /*幅指定*/
+}
+}
+ @media screen and (min-width: 769px) and (max-width: 1129px) {
+
+/*レイアウト*/	
+#wrapper {
+	margin: auto; /*ボックス外側の余白(autoはボックス幅や隣接する他ボックス幅による自動余白割り当て)*/
+	width: 100%; /*幅指定*/
+}
+
+#logo {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+
+#contents {
+	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
+	margin-right: -220px; /*ボックス外側右の余白*/
+	width: 100%; /*幅指定*/
+}
+
+#column1 {
+	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
+	margin-left: -220px; /*ボックス外側左の余白*/
+	width: 100%; /*幅指定*/
+}
+
+#column1_inner {
+	margin-right: 230px; /*ボックス外側右の余白*/
+	margin-left: 190px; /*ボックス外側左の余白*/
+}
+
+#sidebar {
+	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
+	margin-left: 10px; /*ボックス外側左の余白*/
+	width: 170px; /*幅指定*/
+}
+
+#column2 {
+	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
+	margin-right: 10px; /*ボックス外側右の余白*/
+	width: 200px; /*幅指定*/
+}
+
+#afir {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+
+#afir2 {
+	/*グラデーション設定*/
+	background: #f3e2c7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3e2c7), color-stop(50%,#c19e67), color-stop(51%,#b68d4c), color-stop(100%,#e9d4b3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
+	/*ここまでグラデーション設定*/
+	margin-top: 20px; /*ボックス外側上の余白*/
+	width: 200px; /*幅指定*/
+	height: 200px; /*領域の高さ指定*/
+}
+
+#photo a {
+	margin: 1%; /*ボックス外側の余白*/
+	width: 23%; /*幅指定*/
+}
+#photo_2 a {
+	margin: 1%; /*ボックス外側の余白*/
+	width: 23%; /*幅指定*/
+}
+}
+ @media screen and (min-width: 1130px) {
+
+/*レイアウト*/	
+#wrapper {
+	margin: auto; /*ボックス外側の余白(autoはボックス幅や隣接する他ボックス幅による自動余白割り当て)*/
+	width: 1130px; /*幅指定*/
+}
+
+#logo {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+
+#contents {
+	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
+	width: 800px; /*幅指定*/
+}
+
+#column1 {
+	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
+	width: 610px; /*幅指定*/
+}
+
+#sidebar {
+	float: left; /*要素を左か右に寄せて配置(leftは左に寄せる)*/
+	margin-left: 10px; /*ボックス外側左の余白*/
+	width: 170px; /*幅指定*/
+}
+
+#column2 {
+	float: right; /*要素を左か右に寄せて配置(rightは右に寄せる)*/
+	margin-right: 10px; /*ボックス外側右の余白*/
+	width: 300px; /*幅指定*/
+}
+
+#afir {
+	/*グラデーション設定*/
+	background: #f3e2c7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3e2c7), color-stop(50%,#c19e67), color-stop(51%,#b68d4c), color-stop(100%,#e9d4b3)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */
+	/*ここまでグラデーション設定*/
+	margin-top: 20px; /*ボックス外側上の余白*/
+	width: 300px; /*幅指定*/
+	height: 250px; /*領域の高さ指定*/
+}
+
+#afir2 {
+	display: none; /*要素の表示指定（noneは非表示）*/
+}
+
+#photo a {
+	margin: 1%; /*ボックス外側の余白*/
+	width: 18%; /*幅指定*/
+}
+#photo_2 a {
+	margin: 1%; /*ボックス外側の余白*/
+	width: 18%; /*幅指定*/
+}
 }
