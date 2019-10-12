@@ -2,6 +2,15 @@
 
 /* ----- css reset(各ブラウザで指定されているスタイルを初期化)と全体設定 ----- */
 
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc { display: block !important; }
+.sp { display: none !important; }
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 750px) {
+.pc { display: none !important; }
+.sp { display: block !important; }
+}
+
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p, th, td, img {
 	margin: 0; /*ボックス外側の余白(値1つは上下左右をまとめて指定)*/
 	padding: 0; /*ボックス内側の余白(値1つは上下左右をまとめて指定)*/
