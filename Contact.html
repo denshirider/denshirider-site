@@ -6,8 +6,8 @@
 <meta name="Description" content="電子ライダーのサイト" />
 <meta name="Keywords" content="電子ライダー,自作CPU,ロジックIC" />
 <meta name="viewport" content="width=device-width; initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-<link rel="icon" href="http://saetl.net/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" type="img/x-icon" href="http://saetl.net/favicon.ico" />
+<link rel="icon" href="./images/icon.png" type="image/x-icon" />
+<link rel="shortcut icon" type="img/x-icon" href="./images/icon.png" />
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/sm-core-css.css"> <!--中央上のメインメニュー-->
 <link rel="stylesheet" href="css/sm-blue.css"> <!--中央上のメインメニュー-->
@@ -18,6 +18,20 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
+
+<!--共通部分ファイル分割-->
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script>
+    $(function() {
+    $("#news").load("news.html");
+    $("#header").load("header.html");
+    $("#footer").load("footer.html");
+    $("#menu").load("menu.html");
+    $("#header2").load("header2.html");
+    });
+</script>
+
 </head>
 
 <body>
@@ -27,13 +41,8 @@
 </noscript>
 
 <!--　ヘッダー（サイト名やサイトの内容を示す部分）　-->
-<header>
-  <!-- ロゴ（ページ左上のサイト名）　-->
-  <div id="logo">
-    <a href="index.html" title="サイト名のトップページへ">Sample Template</a> 
-    <!-- / #logo -->
-  </div>
-</header>
+<div id="header">
+</div>
 
 
 <div id="wrapper">
@@ -44,19 +53,8 @@
       <div id="column1_inner">
       
         <!--　ナビゲーションメニュー（ヘッダーの下のメインメニュー）ー-->
-        <ul id="main-menu" class="sm sm-blue">
-          <li class="menutop"><a href="index.html">Home</a> 
-          </li>
-          <li class="menutop"><a href="Products.html">Products</a>
-          </li>
-          <li class="menutop"><a href="About.html">About</a>
-          </li>
-          <li class="menutop"><a href="Contact.html">Contact</a>
-          </li>
-          <li class="menutop"><a href="#">-</a>
-          </li>
-        </ul>
-        
+        <div id="menu">
+        </div>
                 
         <article>
           <h2>お問い合わせ</h2>
@@ -68,7 +66,7 @@
               <li><font color="blue">denshirider@gmail.com</font></li>
             </ul>
         </article>
-
+        
         <!-- / #column1_inner -->
       </div>
       
@@ -79,37 +77,24 @@
     <div id="sidebar">
     
       <!-- ロゴ（ページ左上のサイト名）　-->
-      <h1 id="logo_2">
-        <a href="index.html" title="サイト名のトップページへ">Sample<br>
-        Template</a> 
-        <!-- / #logo -->
-      </h1>
+      <div id="header2">
+      </div>
       
       <!-- / #sidebar -->
     </div>
     
     <!-- / #contents -->
   </div>
-  
-    
-  <!--　ページの右の新着情報　-->
-    <h2>お知らせ</h2>
-    <div id="scroll">
-      <dl id="newlist">
-        <dt>2019/10/xx</dt>
-        <dd><a href="#">サイト開設しました。</a></dd>
-      </dl>
-      <!-- / .newlist -->
-    </div>
-    
-    <!-- / #column2 -->
-  </div>
+
+  <!--　ページの右の新着情報　--> 
+<div id="news">
+</div>
   
   
 <!--　ページの下部分　-->
-  <footer>
-    <p class="cop">Copyright(C) 2019 電子ライダー All Rights Reserved.</p>
-  </footer>
+<div id="footer">
+</div>
+
   
   <!-- / #wrapper -->
 </div>
@@ -134,26 +119,3 @@
 <script src="js/scrolltopcontrol.js"></script>  <!--スクロールしながらページのトップに戻る-->
 </body>
 </html>
-
-<!--
-          <article>
-          <h2>レスポンシブデザインとは</h2>
-          <ul>
-            <li>パソコンからスマートフォンまで様々な画面サイズに対応させるデザインのことです。
-          </ul>
-          <h2>このテンプレートで使用している画像について</h2>
-          <ul>
-            <li>index.htmlのYouTubeの動画と画面下側のギャラリー画像は<a href="http://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9" target="_blank">API</a>を使用しています。
-            <li>APIのファイルはapp.jsです。詳細は<a href="category.html">こちら</a>
-          </ul>
-          <h2>テンプレートのご利用について</h2>
-          <ul>
-            <li> このテンプレートはすべて無料でご利用いただける <a href="http://saetl.net/"> Saetl.net </a> から配布しています。 
-            <li class="color1">著作権表示は必要ありません（テンプレートにも記載はありません） 
-            <li> 無料テンプレートでよくあるページ内の著作権表示は一切必要ありませんのでご自由にお使いください。 
-            <li> 詳しくは <a href="http://saetl.net/about.html"> 利用規約 </a> をご覧ください。 
-             
-            <li> <a href="http://saetl.net/howto.html"> ご利用方法はこちら </a> からお願いします。
-          </ul>
-        </article>
--->

@@ -18,6 +18,20 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 <![endif]-->
+
+<!--共通部分ファイル分割-->
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <script>
+    $(function() {
+    $("#news").load("news.html");
+    $("#header").load("header.html");
+    $("#footer").load("footer.html");
+    $("#menu").load("menu.html");
+    $("#header2").load("header2.html");
+    });
+</script>
+
 </head>
 
 <body>
@@ -27,14 +41,8 @@
 </noscript>
 
 <!--　ヘッダー（サイト名やサイトの内容を示す部分）　-->
-<header>
-  <!-- ロゴ（ページ左上のサイト名）　-->
-  <div id="logo">
-    <a href="index.html" title="トップページ"><img src="./images/logo.png" alt="ロゴ" width="12%" height="12%" border="0">
-    <font size="4" face="fantasy">電子ライダー</font></a> 
-    <!-- / #logo -->
-  </div>
-</header>
+<div id="header">
+</div>
 
 
 <div id="wrapper">
@@ -45,18 +53,9 @@
       <div id="column1_inner">
       
         <!--　ナビゲーションメニュー（ヘッダーの下のメインメニュー）ー-->
-        <ul id="main-menu" class="sm sm-blue">
-          <li class="menutop"><a href="index.html">Home</a> 
-          </li>
-          <li class="menutop"><a href="Products.html">Products</a>
-          </li>
-          <li class="menutop"><a href="About.html">About</a>
-          </li>
-          <li class="menutop"><a href="Contact.html">Contact</a>
-          </li>
-          <li class="menutop"><a href="#">-</a>
-          </li>
-        </ul>
+        <div id="menu">
+        </div>
+
         
         <div id="topcontent">
         <!--　YouTubeプレーヤー　ー-->
@@ -81,37 +80,24 @@
     <div id="sidebar">
     
       <!-- ロゴ（ページ左上のサイト名）　-->
-      <h1 id="logo_2">
-        <a href="index.html" title="トップページ"><img src="./images/logo.png" alt="ロゴ" width="50%" height="50%" border="0"><br>
-        <font size="4" face="fantasy">電子ライダー</font></a> 
-        <!-- / #logo -->
-      </h1>
+      <div id="header2">
+      </div>
       
       <!-- / #sidebar -->
     </div>
     
     <!-- / #contents -->
   </div>
-  
-  <div id="column2">
-  <!--　ページの右の新着情報　-->
-    <h2>お知らせ</h2>
-    <div id="scroll">
-      <dl id="newlist">
-        <dt>2019/10/xx</dt>
-        <dd><a href="#">サイト開設しました。</a></dd>
-      </dl>
-      <!-- / .newlist -->
-    </div>
-    
-    <!-- / #column2 -->
-  </div>
+
+  <!--　ページの右の新着情報　--> 
+<div id="news">
+</div>
   
   
 <!--　ページの下部分　-->
-  <footer>
-    <p class="cop">Copyright(C) 2019 電子ライダー </p>
-  </footer>
+<div id="footer">
+</div>
+
   
   <!-- / #wrapper -->
 </div>
