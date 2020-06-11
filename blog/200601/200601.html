@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>電子ライダーのサイト　自作CPU</title>
+<meta name="Description" content="電子ライダーのサイト" />
+<meta name="Keywords" content="電子ライダー,自作CPU,ロジックIC" />
+<meta name="viewport" content="width=device-width; initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<link rel="icon" href="../../images/icon.png" type="image/x-icon" />
+<link rel="shortcut icon" type="img/x-icon" href="../../images/icon.png" />
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="../../css/sm-core-css.css"> <!--中央上のメインメニュー-->
+<link rel="stylesheet" href="../../css/sm-blue.css"> <!--中央上のメインメニュー-->
+<link rel="stylesheet" href="../../css/lightbox.css"> <!--画像拡大-->
+<link rel="stylesheet" href="../../css/hovereffects.css"> <!--ホバーエフェクト-->
+<link href='http://fonts.googleapis.com/css?family=Ceviche+One|Artifika' rel='stylesheet' type='text/css'> <!--googleのwebフォント-->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<!--共通部分ファイル分割-->
+<script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script>
+    $(function() {
+    $("#news").load("../../news.html");
+    $("#footer").load("../../footer.html");
+    $("#menu").load("../../menu.html");
+    $("#header2").load("../../header2.html");
+    });
+</script>
+
+</head>
+
+<body>
+
+<noscript>
+<p>※このページはJavaScriptを使用しています。JavaScript設定を有効にしてご覧ください。</p>
+</noscript>
+
+<!--　ヘッダー（サイト名やサイトの内容を示す部分）　-->
+<div id="header">
+</div>
+
+
+<div id="wrapper">
+  <div id="contents">
+
+      <!--　ページの中央部分　-->
+    <div id="column1">    
+      <div id="column1_inner">
+      
+        <!--　ナビゲーションメニュー（ヘッダーの下のメインメニュー）ー-->
+        <div id="menu">
+        </div>
+                
+        <article>
+
+          <br>
+          <a href="../../blog.html"><font size="4">戻る</font></a>
+          <br>
+          <iframe src="./200601Verilogでシミュレーションと命令デコーダ設計.html" width = "100%" height="500"></iframe>
+
+        </article>
+        
+        <!-- / #column1_inner -->
+      </div>
+      
+      <!--column1-->
+    </div>
+    
+    <!--　ページの左部分　-->
+    <div id="sidebar">
+    
+      <!-- ロゴ（ページ左上のサイト名）　-->
+      <div id="header2">
+      </div>
+      
+      <!-- / #sidebar -->
+    </div>
+    
+    <!-- / #contents -->
+  </div>
+
+  <!--　ページの右の新着情報　--> 
+<div id="news">
+</div>
+  
+  
+<!--　ページの下部分　-->
+<div id="footer">
+</div>
+
+  
+  <!-- / #wrapper -->
+</div>
+
+<!--　javascript設定　--> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  <!--googleのCDN（ネットワーク経由でコンテンツを提供するサービス）よりjqueryをロード-->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> <!--エフェクト効果-->
+<script src="js/jquery.smartmenus.js"></script> <!--メインメニュー-->
+<script>
+	$(function() {
+		$('#main-menu').smartmenus();
+	});
+</script> 
+<script src="js/app.js"></script> <!--youtube api、flickr api　設定-->
+<script src="js/jquery.vgrid.min.js"></script> <!--ボックスを敷き詰める-->
+<script src="js/jquery.slimscroll.js"></script> <!--新着情報のスクロール-->
+<script>
+	$('#scroll').slimScroll({
+});
+</script> 
+<script src="js/lightbox-2.6.min.js"></script> <!--画像拡大-->
+<script src="js/scrolltopcontrol.js"></script>  <!--スクロールしながらページのトップに戻る-->
+</body>
+</html>
