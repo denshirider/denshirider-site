@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>200619命令実行サイクル.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E5%9B%B3">ブロック図</h1>
+<p>CPU全体のブロック図です。データバスを介して各ユニットが接続されています。まず左側から、AレジスタとBレジスタがALUに繋がっており、ALUはA,Bレジスタの値を演算します。ALUには演算結果によってセットされるフラグを保持するフラグレジスタがついてます。演算結果とフラグレジスタをデータバスに出力できます。Cレジスタ、Dレジスタは汎用のレジスタです。特別な機能を持たず値を保持することのみ可能です。A,Bレジスタは後に解説しますが、命令実行サイクル中に自動的に書き換わってしまうため、保持し続ける必用があるデータはこのC、Dレジスタに保存しましょう。プログラムカウンタ、スタックポインタはアドレスを格納します。データバスの他にアドレスバスとも接続されます。CPU制御部としてひとくくりできます。CPU制御部は内部にカウンタ、デコーダを持っており命令実行を制御します。
+<img src="./ブロック図.png" alt="ブロック図"></p>
+<h1 id="%E5%91%BD%E4%BB%A4%E5%AE%9F%E8%A1%8C%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB">命令実行サイクル</h1>
+<p>命令実行は7クロックで1サイクルです。</p>
+<ol>
+<li>ロード先アドレスをアドレスレジスタに保存</li>
+<li>アドレスレジスタが示す先からAレジスタに転送</li>
+<li>ストア先アソレスをアドレスレジスタに保存</li>
+<li>アドレスレジスタが示す先からBレジスタに転送</li>
+<li>オペコードをオペコードレジスタに保存</li>
+<li>命令を実行</li>
+<li>命令を実行</li>
+</ol>
+<br>
+シミュレーション上での制御信号波形を示します。
+<br>
+上からクロック、リセット、制御カウンタでそこから下は制御信号です。それぞれ左に意味を書きました。
+1サイクルは0から6のカウンタで制御されます。制御信号は0で有効です。<br>
+<ol>
+<li>ロード先アドレスをアドレスレジスタに保存
+<ul>
+<li>ADRWR,PCABOE,RAMOEが有効。</li>
+</ul>
+<ol>
+<li>PCABOEが有効でプログラムカウンタからアドレスバスに出力する。</li>
+<li>RAMOEが有効でRAMはプログラムカウンタから指定されたアドレスの値をデータバスに出力する。</li>
+<li>ADRWRが有効でアドレスレジスタはデータバスに流れてるデータを保持する。</li>
+</ol>
+</li>
+<li>アドレスレジスタが示す先からAレジスタに転送
+<ul>
+<li>AWR,PCEN,ADDECGが有効。</li>
+</ul>
+<ol>
+<li>ADDECGが有効でアドレスレジスタからアドレスデコーダに転送され指定のアドレスにリード信号を送る。</li>
+<li>リード信号を受けた先がデータをデータバスに流す。</li>
+<li>AWRが有効でAレジスタはデータバスに流れているデータを保持する。</li>
+<li>PCENが有効でプログラムカウンタがインクリメント。</li>
+</ol>
+</li>
+<li>ストア先アソレスをアドレスレジスタに保存
+<ul>
+<li>ADRWR,PCABOE,RAMOEが有効。</li>
+</ul>
+<ol>
+<li>PCABOEが有効でプログラムカウンタからアドレスバスに出力する。</li>
+<li>RAMOEが有効でRAMはプログラムカウンタから指定されたアドレスの値をデータバスに出力する。</li>
+<li>ADRWRが有効でアドレスレジスタはデータバスに流れてるデータを保持する。</li>
+</ol>
+</li>
+<li>アドレスレジスタが示す先からBレジスタに転送
+<ul>
+<li>BWR,PCEN,ADDECGが有効。</li>
+</ul>
+<ol>
+<li>ADDECGが有効でアドレスレジスタからアドレスデコーダに転送され指定のアドレスにリード信号を送る。</li>
+<li>リード信号を受けた先がデータをデータバスに流す。</li>
+<li>BWRが有効でBレジスタはデータバスに流れているデータを保持する。</li>
+<li>PCENが有効でプログラムカウンタがインクリメント。</li>
+</ol>
+</li>
+<li>オペコードをオペコードレジスタに保存
+<ul>
+<li>OPRWR,PCABOE,RAMOEが有効。</li>
+</ul>
+<ol>
+<li>PCABOEが有効でプログラムカウンタからアドレスバスに出力する。</li>
+<li>RAMOEが有効でRAMはプログラムカウンタから指定されたアドレスの値をデータバスに出力する。</li>
+<li>OPRWRが有効でオペコードレジスタはデータバスに流れてるデータを保持する。</li>
+</ol>
+</li>
+<li>命令を実行(今回は減算命令を実行)
+<ul>
+<li>ISDECGが有効。</li>
+</ul>
+<ol>
+<li>ISDECGが有効でオペコードレジスタから命令デコーダに転送され減算命令に必要なADDECG,FAE,SUBSを有効。</li>
+<li>ADDECGが有効でアドレスレジスタからアドレスデコーダに転送され指定のアドレスにライト信号を送る。(このアドレスはカウンタが2の時に書き込んだもの)</li>
+<li>FAE,SUBS(1で有効)が有効でALUはAレジスタ、Bレジスタの値を演算(今回は減算)し演算結果をデータバスに流す。</li>
+</ol>
+</li>
+<li>命令を実行(今回は減算命令を実行)
+<ul>
+<li>※スタック操作では二回クロックが必要だが今回は一回でよいためカウンタ5と同様の信号を出力する。加えてPCENが有効。</li>
+</ul>
+<ol>
+<li>PCENが有効でプログラムカウンタがインクリメント。</li>
+</ol>
+</li>
+</ol>
+<p><img src="./wave.png" alt="波形"></p>
+
+</body>
+</html>
