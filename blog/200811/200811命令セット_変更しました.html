@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>200811命令セット_変更しました.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><a href="../../blog.html"><font size="+2">戻る</font></a></p>
+<h1 id="%E5%91%BD%E4%BB%A4%E3%82%BB%E3%83%83%E3%83%88">命令セット</h1>
+<p>一つ前のブログから命令周りを大幅に変更しました。命令の数は全部で16個でちょうど16進数一桁で4bitで表すことができる数です。演算命令は思い切って加算器を使うもののみにしました。足し算、引き算、比較だけです。論理演算は一切ないですが代わりにCALL命令とRETURN命令をねじ込みました。スタックを持っているのでCALL命令は欲しいですよね。以下命令のリストです。</p>
+<br>
+<p>命令は3つの要素で構成される。(命令、値1、値2)である。命令によっては値1や値2のみ使用するものがあるが、その場合使用しない値にはダミーを置く。必ず連続した3つのアドレス先に格納されプログラムカウンタは命令毎に+3される。なおメモリには値2、値1、命令の順番で格納される。
+下記の命令詳細に用いている略語は表下部に記述。←は値のコピーを示す。また()で示すものは括弧内をアドレスとして用いて、その示す先。</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>機械語</th>
+<th>ニーモニック</th>
+<th>命令全体</th>
+<th>詳細</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>move</td>
+<td>0</td>
+<td>MOV</td>
+<td>MOV, STA, LDA</td>
+<td>ストアアドレス、ロードアドレスを指定して、ロードアドレス先の内容をストアアドレス先にコピーする。<br>ロードアドレス先の内容は変化しない。<br> (STA) ← (LDA)</td>
+</tr>
+<tr>
+<td>move immediate C register</td>
+<td>1</td>
+<td>MVIC</td>
+<td>MVIC, IM, --</td>
+<td>即時データをCレジスタに格納する。<br> C ← IM</td>
+</tr>
+<tr>
+<td>move immediate D register</td>
+<td>2</td>
+<td>MVID</td>
+<td>MVID, IM, --</td>
+<td>即時データをDレジスタに格納する。<br> D ← IM</td>
+</tr>
+<tr>
+<td>addition</td>
+<td>3</td>
+<td>ADD</td>
+<td>ADD, STA, LDA</td>
+<td>ストアアドレス、ロードアドレスを指定して、それぞれの内容を加算しストアアドレス先に格納する。<br> ロードアドレス先の内容は変化しない。<br> フラグレジスタが更新される。<br> (STA) ← (STA) + (LDA)<br> FR ← FR</td>
+</tr>
+<tr>
+<td>subtraction</td>
+<td>4</td>
+<td>SUB</td>
+<td>SUB, STA, LDA</td>
+<td>ストアアドレス、ロードアドレスを指定して、ストアアドレス先の内容からロードアドレス先の内容を減算した値をストアアドレス先に格納する。<br>ロードアドレス先の内容は変化しない。<br>フラグレジスタが更新される。<br>(STA) ← (STA) - (LDA)<br>FR ← FR</td>
+</tr>
+<tr>
+<td>Comparison</td>
+<td>5</td>
+<td>CMP</td>
+<td>SUB, STA, LDA</td>
+<td>ストアアドレス、ロードアドレスを指定して、ストアアドレス先の内容からロードアドレス先の内容を減算した値でもってフラグレジスタを更新する。<br>ストアアドレス先の内容、ロードアドレス先の内容は変化しない。<br>フラグレジスタが更新される。<br>FR ← FR</td>
+</tr>
+<tr>
+<td>address jump</td>
+<td>6</td>
+<td>ADJP</td>
+<td>ADJP, --, LDA</td>
+<td>ロードアドレスを指定して、ロードアドレス先の内容をプログラムカウンタに格納する。<br>ロードアドレス先の内容は変化しない。<br>PC ← (LDA)</td>
+</tr>
+<tr>
+<td>jump</td>
+<td>7</td>
+<td>JMP</td>
+<td>JMP, IM, --</td>
+<td>即時データをプログラムカウンタに格納する。<br>PC ← IM</td>
+</tr>
+<tr>
+<td>jump carry</td>
+<td>8</td>
+<td>JC</td>
+<td>JC, IM, --</td>
+<td>キャリーフラグが1の時即時データをプログラムカウンタに格納する。<br>PC ← IM (Cflag == 1)</td>
+</tr>
+<tr>
+<td>jump not carry</td>
+<td>9</td>
+<td>JNC</td>
+<td>JNC, IM, --</td>
+<td>キャリーフラグが0の時即時データをプログラムカウンタに格納する。<br>PC ← IM (Cflag == 0)</td>
+</tr>
+<tr>
+<td>jump zero</td>
+<td>A</td>
+<td>JZ</td>
+<td>JZ, IM, --</td>
+<td>ゼロフラグが1の時即時データをプログラムカウンタに格納する。<br>PC ← IM (Zflag == 1)</td>
+</tr>
+<tr>
+<td>jump not zero</td>
+<td>B</td>
+<td>JNZ</td>
+<td>JNZ, IM, --</td>
+<td>キャリーフラグが0の時即時データをプログラムカウンタに格納する。<br>PC ← IM (Cflag == 0)</td>
+</tr>
+<tr>
+<td>push</td>
+<td>C</td>
+<td>PUSH</td>
+<td>PUSH, --, LDA</td>
+<td>ロードアドレスを指定して、ロードアドレス先の内容をスタックポインタが示す先に格納する。<br>格納後スタックポインタはデクリメントされる。<br>ロードアドレス先の内容は変化しない。<br>(SP) ← (LDA)<br>SP ← SP-1</td>
+</tr>
+<tr>
+<td>pop</td>
+<td>D</td>
+<td>POP</td>
+<td>POP, STA, --</td>
+<td>スタックポインタをインクリメントする。<br>インクリメント後、指定したストアアドレス先にスタックポインタが示す先の内容を格納する。<br>ストアアドレスにはレジスタのみ指定できる。<br>SP ← SP+1<br>(STA) ← (SP)</td>
+</tr>
+<tr>
+<td>call</td>
+<td>E</td>
+<td>CALL</td>
+<td>CALL, IM, --</td>
+<td>プログラムカウンタの内容をスタックポインタが示す先に格納する。<br>格納後スタックポインタはデクリメントされ、即時データをプログラムカウンタに格納する。<br>プッシュされるプログラムカウンタの内容は内部処理の関係上、現在実行中のアドレス(CALL命令が書かれているアドレス)より+1された値となる。<br>(SP) ← PC<br>SP ← SP-1<br>PC ← IM</td>
+</tr>
+<tr>
+<td>return</td>
+<td>F</td>
+<td>RET</td>
+<td>RET, --, --</td>
+<td>スタックポインタをインクリメントする。<br>インクリメント後、プログラムカウンタにスタックポインタが示す先の内容を格納する。<br>SP ← SP+1<br>PC ← (SP)</td>
+</tr>
+</tbody>
+</table>
+<p>STA　ストアアドレス　LDA　ロードアドレス　IM　即時データ　C　Cレジスタ　D　Dレジスタ　FR　フラグレジスタ　PC　プログラムカウンタ　SP　スタックポインタ</p>
+<hr>
+<h1 id="%E5%91%BD%E4%BB%A4%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80">命令デコーダ</h1>
+<p>上の表にある機械語の欄の通り、今までのややこしいものから分かりやすくなりました。先駆者のホームページや本から学ばせて頂きました。やっぱり順番に並んでいた方が分かりやすいですし命令デコーダもアドレスデコーダを使えまばすごく楽に作ることができます。いままでややこしく作っていたのが恥ずかしいです。</p>
+<h1 id="%E8%AB%96%E7%90%86%E6%BC%94%E7%AE%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">論理演算について</h1>
+<p>CPUとして論理演算がないのはつらいです。しかしながら前作のTTM4ではAND,OR,XORを実行可能でしたが加算器を使った演算に比べて使用頻度が低かったです。また、論理演算するならこの3つの命令では不十分で右シフトはやっぱりあったほうがいいでしょう。こうなると全部で16命令という制限を大分圧迫してしまうので割り切りました。このCPUは追加で外部にレジスタを持てるように設計しているので、足りない命令を補うような動作をするレジスタを外付けできるようにする予定です。</p>
+<h1 id="%E3%82%B9%E3%82%BF%E3%83%83%E3%82%AF%E3%83%9D%E3%82%A4%E3%83%B3%E3%82%BF%E3%82%92%E5%B0%91%E3%81%97%E5%A4%89%E6%9B%B4">スタックポインタを少し変更</h1>
+<p>スタックポインタはスタックに格納した最新のデータの保存先のアドレスを示す。<br>
+から<br>
+スタックポインタは次に格納するデータの保存先のアドレスを示す。<br>
+に変更。<br>
+自分のメモのつもりで書きます。スタックポインタはスタックを構成する領域のデータを管理するためのレジスタだが、私はスタックポインタはPUSHした最新のデータの格納した先を示すと習った。が、次のデータ格納先を示す場合もあるらしい。私は最初前者で設計していたが、CALL命令を実装するにあたって。前者であれば、先にスタックポインタをデクリメントしその後スタックポインタが示す先にプログラムカウンタの値を格納してさらにプログラムカウンタにジャンプ先のアドレスを格納する。これだとどうしても命令実行に3クロックが必要になる。後者であれば先にスタックポインタが示す先にプログラムカウンタの値を格納する。次にスタックポインタのインクリメントとプログラムカウンタにジャンプ先のアドレスを格納する。この操作は同時に行う事ができる。スタックポインタのインクリメントはデータバスを占領しないので、スタックポインタのインクリメントと同時にプログラムカウンタの更新を行うことでCALL命令が2クロックで実行できるようになる。このため&quot;スタックポインタは次のデータ格納先を示す&quot;に変更した。</p>
+
+</body>
+</html>
